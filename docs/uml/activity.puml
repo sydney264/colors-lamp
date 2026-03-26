@@ -1,0 +1,25 @@
+@startuml
+start
+
+:User enters login credentials;
+:Send request to Login API;
+
+if (Valid credentials?) then (yes)
+  :Return user info;
+  :Display dashboard;
+else (no)
+  :Show error message;
+  stop
+endif
+
+:User adds color;
+:Send request to AddColor API;
+:Store color in database;
+
+:User searches colors;
+:Send request to SearchColors API;
+:Retrieve matching colors;
+:Display results;
+
+stop
+@enduml

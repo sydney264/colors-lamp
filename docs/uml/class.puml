@@ -1,0 +1,35 @@
+@startuml
+
+class User {
+  +ID: int
+  +FirstName: string
+  +LastName: string
+  +Login: string
+  +Password: string
+}
+
+class Color {
+  +ID: int
+  +Name: string
+  +UserID: int
+}
+
+class LoginAPI {
+  +login(login, password)
+}
+
+class AddColorAPI {
+  +addColor(userId, color)
+}
+
+class SearchColorsAPI {
+  +search(userId, search)
+}
+
+User "1" --> "many" Color : owns
+
+LoginAPI --> User
+AddColorAPI --> Color
+SearchColorsAPI --> Color
+
+@enduml
