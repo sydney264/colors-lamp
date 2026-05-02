@@ -49,6 +49,16 @@ function doLogin() {
     }
 }
 
+function setUserData(id, first, last) {
+    userId = id;
+    firstName = first;
+    lastName = last;
+}
+
+function getUserId() {
+    return userId;
+}
+
 function saveCookie() {
     let minutes = 20;
     let date = new Date();
@@ -148,4 +158,9 @@ function searchColor() {
     } catch (err) {
         document.getElementById("colorSearchResult").innerHTML = err.message;
     }
+}
+
+// Export functions for testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { saveCookie, setUserData, readCookie, getUserId, doLogin, doLogout, addColor, searchColor };
 }
